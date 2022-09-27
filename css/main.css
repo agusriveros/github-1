@@ -1,0 +1,224 @@
+/* unidad de medida nueva relativa REM*/
+/*1REM = 16px*/
+h2{
+    font-size: 1rem;
+}
+
+
+/*unidad de medida relativa EM*/
+div{
+    font-size: 40px;
+}
+
+h2{
+    font-size: 1em;
+}
+
+
+/*reset*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*estilos generales*/
+
+body{
+    background-color: #eceef3;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*estilos de header*/
+
+header{
+    display: none;
+}
+
+/*estilos de main*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main h2 span{
+    display: block;
+}
+
+main h2{
+    text-align: center;
+    color: #182941;
+    margin: 1rem;
+}
+
+main p{
+    display: block;
+}
+
+main .boton{
+    background-color: #51b0df;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    box-shadow: 2px 2px 2px black;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+}
+
+/*estilos de section*/
+
+section{
+    display: none;
+}
+
+/*estilos de footer*/
+
+footer h4{
+    text-align: center;
+}
+
+footer{
+    margin-top: 5rem;
+}
+
+/*meida queries*/
+
+@media screen and (min-width:600px){
+   header{
+    display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+
+   header nav ul{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+   }
+
+   header nav ul li{
+    font-weight: bold;
+    transition: 1s;
+   }
+
+   header nav ul li:hover{
+    background-color: #51b0df;
+    transform: scale(0.9);
+    box-shadow: 2px 2px 6px black;
+   }
+
+   /*estilos nuevos del  main*/
+
+   main{
+    height: 70.5vh;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-areas: 
+    "p img"
+    "h2 img"
+    "p-dos img"
+    "boton img";
+    justify-content: center;
+    justify-items: center;
+   }
+
+   main p{
+    grid-area: p;
+   }
+   main img{
+    grid-area: img;
+    width: 60%;
+    filter: drop-shadow(5px -9px 4px blue);
+   }
+   main h2{
+    grid-area: h2;
+    font-size: 1.7rem;
+   }
+   main .p-dos{
+    grid-area: p-dos;
+   }
+   main .boton{
+    grid-area: boton;
+   }
+
+   main .boton:hover{
+    transform: scale(1.1);
+   }
+
+   /*estilos de section*/
+
+   section{
+    background-color: #bee0f1;
+    display: block;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    animation-name: color-fondo;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+   }
+
+   @keyframes color-fondo{
+    0%{
+        background-color: white;
+    }
+    50%{
+        background-color: red;
+    }
+    100%{
+        background-color: black;
+    }
+    
+   }
+
+   section div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   section div img{
+    width: 20%;
+    /*animacion*/
+    animation-name: animacion;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+   }
+
+   @keyframes animacion {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+    
+    /*from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateY(100px);
+    } */
+   }
+
+   section div p{
+    text-align: center;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+   }
+
+   /*estilos de footer*/
+
+   footer{
+    margin-top: 1rem;
+   }
+}
